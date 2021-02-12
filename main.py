@@ -162,6 +162,8 @@ def angles_areAll_equal():
 angles_areAll_equal()
 
 if angles_areAll_equal() == True and dist_areAll_equal() == True:
+    print("\n")
     print("Square")
 else:
+    print("\n")
     print("Not square")
