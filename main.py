@@ -133,12 +133,35 @@ print("Distance 2: {}".format(dist_2to3()))
 print("Distance 3: {}".format(dist_3to4()))
 print("Distance 4: {}".format(dist_4to1()))
 
-#below is the printing for if the shape formed is a square
+# Below is the printing for if the shape formed is a square
 # Properties of square-
 #       1) Has 4 congruent sides
 #       2) Has 4 congruent angles
 
-if dist_1to2() == dist_2to3() and dist_1to2() == dist_3to4() and dist_1to2() == dist_4to1() and angle123() == angle234() and angle123() == angle341() and angle123() == angle412():
-    print("\nThe shape is a square")
+# Below the function calculates whether ALL the (4) sides are equal in distance or not.
+def dist_areAll_equal():
+    all_but_one = dist_2to3() + dist_3to4() + dist_4to1()
+    threetimes_one = dist_1to2() * 3
+    if all_but_one == threetimes_one:
+        return True
+    else:
+        return False
+
+dist_areAll_equal()
+
+# Below the function calculates whether ALL the (4) angles are equal in angle (degrees) or not.
+def angles_areAll_equal():
+    all_but_one = angle2 + angle3 + angle4
+    threetimes_one = angle1 * 3
+    if all_but_one == threetimes_one:
+        return True
+    else:
+        return False
+
+
+angles_areAll_equal()
+
+if angles_areAll_equal() == True and dist_areAll_equal() == True:
+    print("Square")
 else:
-    print("\nThe shape is not a square")
+    print("Not square")
